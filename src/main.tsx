@@ -7,6 +7,6 @@ import AppProviders from "@/app/providers/provider";
 
 createRoot(document.getElementById("root")!).render(
   <AppProviders>
-    <RouterProvider router={router} />,
+    <RouterProvider router={router} />
   </AppProviders>,
 );

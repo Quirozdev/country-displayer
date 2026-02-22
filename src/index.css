@@ -23,6 +23,10 @@
   --color-background: hsl(207, 26%, 17%);
 }
 
-* {
-  @apply transition-colors duration-300;
+@layer base {
+  body {
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+  }
 }

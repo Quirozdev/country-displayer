@@ -3,7 +3,7 @@ import type { RouteObject } from "react-router";
 
 export const countryRoutes: RouteObject[] = [
   {
-    path: "countries",
+    path: "/",
     element: <CountriesPage />,
   },
 ];

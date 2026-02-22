@@ -1,6 +1,6 @@
 import { useThemeStore } from "@/features/theme/model/theme.store";
-import type { Theme } from "@/features/theme/model/theme.types";
 import { useTranslation } from "react-i18next";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeSwitcher() {
   const theme = useThemeStore((state) => state.theme);
@@ -11,12 +11,10 @@ export default function ThemeSwitcher() {
     {
       label: t("light"),
       value: "light",
-      icon: "☀️",
     },
     {
       label: t("dark"),
       value: "dark",
-      icon: "🌙",
     },
   ] as const;
 
@@ -27,7 +25,9 @@ export default function ThemeSwitcher() {
   const selectedAvailableOption =
     availableOptions[selectedAvailableOptionIndex];
 
-  return availableOptions.length === 2 ? (
+  const IconComponent = selectedAvailableOption.value === "light" ? Moon : Sun;
+
+  return (
     <button
       onClick={() => {
         changeTheme(
@@ -36,27 +36,12 @@ export default function ThemeSwitcher() {
           ].value,
         );
       }}
-      className="border rounded-md p-1"
+      className="text-foreground flex cursor-pointer items-center gap-2 p-1"
     >
-      {selectedAvailableOption.icon} {selectedAvailableOption.label}
+      <IconComponent className="transition-colors duration-300" />
+      <span className="text-foreground hidden font-semibold @md:block">
+        {selectedAvailableOption.label}
+      </span>
     </button>
-  ) : (
-    <select
-      name="theme"
-      value={theme}
-      onChange={(e) => {
-        const selectedTheme = e.target.value as Theme;
-        changeTheme(selectedTheme);
-      }}
-      className="border rounded-md"
-    >
-      {availableOptions.map((option) => {
-        return (
-          <option value={option.value} key={option.value}>
-            {option.icon} {option.label}
-          </option>
-        );
-      })}
-    </select>
   );
 }

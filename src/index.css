@@ -3,8 +3,9 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   --color-primary: hsl(0, 100%, 100%);
-  --color-text: hsl(200, 15%, 8%);
+  --color-foreground: hsl(200, 15%, 8%);
   --color-background: hsl(0, 0%, 99%);
   --color-input: hsl(0, 0%, 50%);
 }
@@ -18,10 +19,10 @@
 
 [data-theme="dark"] {
   --color-primary: hsl(209, 23%, 22%);
-  --color-text: hsl(0, 100%, 100%);
+  --color-foreground: hsl(0, 100%, 100%);
   --color-background: hsl(207, 26%, 17%);
 }
 
 * {
-  @apply transition-colors duration-1000;
+  @apply transition-colors duration-300;
 }

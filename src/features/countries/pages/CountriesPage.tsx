@@ -1,5 +1,7 @@
-import { CountryCard } from "@/features/countries/components/CountryCard";
 import { useGetCountries } from "@/features/countries/hooks/use-get-countries";
+import type { CountriesResponse } from "@/features/countries/types/country.types";
+import { CountriesContent } from "@/features/countries/widgets/CountriesContent";
+import { CountriesHeader } from "@/features/countries/widgets/CountriesHeader";
 
 export default function CountriesPage() {
   const { data: countries, isLoading } = useGetCountries();
@@ -9,10 +11,9 @@ export default function CountriesPage() {
   }
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
-      {countries?.map((country) => (
-        <CountryCard country={country} key={country.cca3} />
-      ))}
+    <div className="flex flex-col gap-4">
+      <CountriesHeader />
+      <CountriesContent countries={countries as CountriesResponse} />
     </div>
   );
 }

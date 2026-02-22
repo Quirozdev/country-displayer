@@ -1,3 +1,4 @@
+import { CountriesEmptyState } from "@/features/countries/components/CountriesEmptyState";
 import { CountryCard } from "@/features/countries/components/CountryCard";
 import type { Country } from "@/features/countries/types/country.types";
 import {
@@ -13,27 +14,43 @@ export function CountriesContent({
   countries,
   countrySearch,
   setCountrySearch,
+  availableRegions,
+  selectedRegion,
+  setSelectedRegion,
 }: Props) {
   const filteredCountries = countries.filter((country) => {
-    if (!countrySearch) {
+    if (!countrySearch && !selectedRegion) {
       return true;
     }
-    return country.name.common
-      .toLowerCase()
-      .includes(countrySearch.toLowerCase().trim());
+    const nameMatch = !countrySearch
+      ? true
+      : country.name.common
+          .toLowerCase()
+          .includes(countrySearch.toLowerCase().trim());
+    const regionMatch = !selectedRegion
+      ? true
+      : country.region === selectedRegion;
+    return nameMatch && regionMatch;
   });
 
   return (
-    <main className="flex flex-col gap-10 px-4 md:px-12">
+    <section className="@container flex flex-col gap-10 px-4 md:px-12">
       <CountriesFilters
         countrySearch={countrySearch}
         setCountrySearch={setCountrySearch}
+        selectedRegion={selectedRegion}
+        setSelectedRegion={setSelectedRegion}
+        availableRegions={availableRegions}
       />
-      <section className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
-        {filteredCountries?.map((country) => (
-          <CountryCard country={country} key={country.cca3} />
-        ))}
-      </section>
-    </main>
+      {filteredCountries?.length ? (
+        <article className="grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-4">
+          {filteredCountries?.map((country) => (
+            <CountryCard country={country} key={country.cca3} />
+          ))}
+        </article>
+      ) : (
+        <CountriesEmptyState />
+      )}
+    </section>
   );
 }

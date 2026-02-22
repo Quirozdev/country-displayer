@@ -1,3 +1,9 @@
 {
-  "search": "Search for a country..."
+  "title": "Where in the world?",
+  "search": "Search for a country...",
+  "regionFilter": "Filter by Region",
+  "noCountriesFound": "No countries found",
+  "population": "Population",
+  "region": "Region",
+  "capital": "Capital"
 }

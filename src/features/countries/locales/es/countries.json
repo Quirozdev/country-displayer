@@ -1,3 +1,9 @@
 {
-  "search": "Buscar un país..."
+  "title": "¿En qué parte del mundo?",
+  "search": "Buscar un país...",
+  "regionFilter": "Filtrar por región",
+  "noCountriesFound": "No se encontraron países",
+  "population": "Población",
+  "region": "Región",
+  "capital": "Capital"
 }

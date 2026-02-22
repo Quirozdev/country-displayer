@@ -17,7 +17,7 @@ export function CountrySearchInput({
 
   return (
     <div
-      className="flex items-center gap-2 rounded-md px-6 py-3 shadow-lg"
+      className="bg-primary flex max-w-md flex-1 items-center gap-2 rounded-md px-6 py-3 shadow-lg"
       onClick={() => {
         if (inputRef && inputRef.current) {
           inputRef.current.focus();

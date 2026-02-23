@@ -21,6 +21,10 @@ for (const path in modules) {
   resources[lng][ns] = modules[path].default;
 }
 
+i18n.on("languageChanged", (lng: string) => {
+  document.documentElement.setAttribute("lang", lng);
+});
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)

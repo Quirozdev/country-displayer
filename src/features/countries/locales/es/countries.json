@@ -5,5 +5,11 @@
   "noCountriesFound": "No se encontraron países",
   "population": "Población",
   "region": "Región",
-  "capital": "Capital"
+  "capital": "Capital",
+  "nativeName": "Nombre Nativo",
+  "subRegion": "Subregión",
+  "topLevelDomain": "Dominio de Nivel Superior",
+  "currencies": "Monedas",
+  "languages": "Lenguajes",
+  "borderCountries": "Países fronterizos"
 }

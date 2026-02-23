@@ -5,5 +5,11 @@
   "noCountriesFound": "No countries found",
   "population": "Population",
   "region": "Region",
-  "capital": "Capital"
+  "capital": "Capital",
+  "nativeName": "Native Name",
+  "subRegion": "Sub Region",
+  "topLevelDomain": "Top Level Domain",
+  "currencies": "Currencies",
+  "languages": "Languages",
+  "borderCountries": "Border Countries"
 }

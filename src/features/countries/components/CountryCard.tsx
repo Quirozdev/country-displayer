@@ -1,5 +1,6 @@
 import type { Country } from "@/features/countries/types/country.types";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 interface Props {
   country: Country;
@@ -7,9 +8,15 @@ interface Props {
 
 export function CountryCard({ country }: Props) {
   const { t } = useTranslation(["countries"]);
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-primary text-foreground flex flex-col gap-4 rounded-lg pb-8 shadow-xl">
+    <div
+      className="bg-primary text-foreground flex cursor-pointer flex-col gap-4 rounded-lg pb-8 shadow-xl"
+      onClick={() => {
+        navigate(`/${country.cca3}`);
+      }}
+    >
       <img
         src={country.flags.png}
         alt={country.flags.alt}

@@ -1,4 +1,4 @@
-import { getCountries } from "@/features/countries/api/getCountries";
+import { getCountries } from "@/features/countries/api/get-countries";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetCountries = () => {

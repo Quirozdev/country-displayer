@@ -18,6 +18,18 @@ export interface Country {
   population: number;
   region: string;
   cca3: string;
+  borders?: string[];
+  currencies: {
+    [key: string]: {
+      symbol: string;
+      name: string;
+    };
+  };
+  languages: {
+    [key: string]: string;
+  };
+  subregion: string;
+  tld: string[];
 }
 
 export type CountriesResponse = Country[];

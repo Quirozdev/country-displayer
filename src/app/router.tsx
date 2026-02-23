@@ -4,7 +4,8 @@ import { countryRoutes } from "@/features/countries/routes";
 
 export const router = createBrowserRouter([
   {
+    path: "/",
     element: <AppLayout />,
-    children: [...countryRoutes],
+    children: countryRoutes,
   },
 ]);

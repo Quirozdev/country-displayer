@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/country-displayer/",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

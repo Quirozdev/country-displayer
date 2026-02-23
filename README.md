@@ -4,7 +4,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 <a href="https://quirozdev.github.io/country-displayer/" target="_blank">Live Site Demo</a>
 
-<img src="./demo-gif.gif" alt="Demo GIF" /
+<img src="./demo-gif.gif" alt="Demo GIF" />
 
 ## Table of contents
 
